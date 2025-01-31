@@ -14,6 +14,11 @@ pipeline {
                 git 'https://github.com/Joice-7/reactsimple' 
             }
         }
+        stage('Check npm Version') {
+     steps {
+         bat 'npm -v'
+     }
+ }
 
         stage('Install Dependencies') {
             steps {
