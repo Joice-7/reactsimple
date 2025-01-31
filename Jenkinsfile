@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run the build command to bundle the app
-                    bat 'npm run build'
+                    sh'npm run build'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image with a tag
-                    bat 'docker build -t $DOCKER_IMAGE .'
+                    sh 'docker build -t $DOCKER_IMAGE .'
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container from the image
-                    bat 'docker run -d -p 3000:3000 --name react-app-container $DOCKER_IMAGE'
+                    sh'docker run -d -p 3000:3000 --name react-app-container $DOCKER_IMAGE'
                 }
             }
         }
