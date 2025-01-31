@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Install Node.js dependencies
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Run the build command to bundle the app
-                    sh'npm run build'
+                    bat'npm run build'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image with a tag
-                    sh 'docker build -t $DOCKER_IMAGE .'
+                    bat 'docker build -t $DOCKER_IMAGE .'
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container from the image
-                    sh'docker run -d -p 3000:3000 --name react-app-container $DOCKER_IMAGE'
+                    bat'docker run -d -p 3000:3000 --name react-app-container $DOCKER_IMAGE'
                 }
             }
         }
