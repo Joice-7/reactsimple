@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PATH = "${env.PATH};C:\\WINDOWS\\System32"
-        DOCKER_PATH = "${env.PATH};C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        DOCKER_PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin"
         DOCKER_IMAGE = 'myimage' // Replace with your Docker image name
     }
  tools {
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container from the image
-                    bat'docker run -d -p 3000:3000 --name myimage .'
+                    bat'docker run -d -p 3000:3000 --name mycontainer myimage:1.0 .'
                 }
             }
         }
