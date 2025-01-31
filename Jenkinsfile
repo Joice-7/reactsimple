@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container from the image
-                    bat'docker run -d -p 3000:3000 --name mycontainer myimage:1.0 .'
+                    bat'docker run -d -p 3001:3000 --name mycontainer myimage:1.0 .'
                 }
             }
         }
