@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     environment {
-        PATH = "${env.PATH};C:\\WINDOWS\\System32"
-        DOCKER_PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin"
-        DOCKER_IMAGE = 'myimage' // Replace with your Docker image name
+       PATH = "${env.PATH};C:\\WINDOWS\\System32;C:\\Program Files\\Docker\\Docker\\resources\\bin"
     }
  tools {
         nodejs 'NodeJS' // Make sure this matches the name you used in Global Tool Configuration
