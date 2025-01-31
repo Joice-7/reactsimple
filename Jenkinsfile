@@ -14,25 +14,6 @@ pipeline {
                 git 'https://github.com/Joice-7/reactsimple' 
             }
         }
-     
-
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    // Install Node.js dependencies
-                    bat 'npm install'
-                }
-            }
-        }
-
-        stage('Build React App') {
-            steps {
-                script {
-                    // Run the build command to bundle the app
-                    bat'npm run build'
-                }
-            }
-        }
 
         stage('Docker Build') {
             steps {
