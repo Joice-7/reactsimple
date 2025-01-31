@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = 'myimage' // Replace with your Docker image name
     }
  tools {
-        nodejs 'NodeJS 23.7.0' // Make sure this matches the name you used in Global Tool Configuration
+        nodejs 'NodeJS' // Make sure this matches the name you used in Global Tool Configuration
     }
     stages {
         stage('Checkout') {
