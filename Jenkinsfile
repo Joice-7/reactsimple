@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        PATH = "${env.PATH};C:\\WINDOWS\\System32"
         DOCKER_IMAGE = 'myimage' // Replace with your Docker image name
     }
  tools {
