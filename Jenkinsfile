@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'myimage' // Replace with your Docker image name
+        PATH = "${env.PATH};C:\\WINDOWS\\System32;C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        
     }
 
     stages {
@@ -13,29 +14,10 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    // Install Node.js dependencies
-                    bat 'npm install'
-                }
-            }
-        }
-
-        stage('Build React App') {
-            steps {
-                script {
-                    // Run the build command to bundle the app
-                    bat 'npm run build'
-                }
-            }
-        }
-
         stage('Docker Build') {
             steps {
                 script {
-                    // Build the Docker image with a tag
-                    bat 'docker build -t $DOCKER_IMAGE .'
+                    bat 'docker build -t myimage:1.0 .'
                 }
             }
         }
@@ -43,8 +25,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    // Run the Docker container from the image
-                    bat 'docker run -d -p 3000:3000 --name react-app-container $DOCKER_IMAGE'
+                    bat 'docker run -d -p 3000:3000 --name mycontainer myimage:1.0 .'
                 }
             }
         }
