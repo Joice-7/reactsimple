@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PATH = "${env.PATH};C:\\WINDOWS\\System32"
-        DPATH = "${env.PATH};C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        DOCKER_PATH = "${env.PATH};C:\\Program Files\\Docker\\Docker\\resources\\bin"
         DOCKER_IMAGE = 'myimage' // Replace with your Docker image name
     }
  tools {
