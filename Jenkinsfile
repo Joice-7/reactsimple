@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from GitHub
+                
                 git 'https://github.com/Joice-7/reactsimple' 
             }
         }
@@ -33,7 +33,6 @@ pipeline {
 
     post {
         always {
-            // Clean up the workspace after the build
             cleanWs()
         }
     }
